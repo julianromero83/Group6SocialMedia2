@@ -11,7 +11,7 @@ import java.util.Set;
  * 
  * @author sburton
  */
-public class Experimenter {
+public abstract class Experimenter {
     
     /**
      * Runs the Experiment and outputs the results
@@ -103,9 +103,10 @@ public class Experimenter {
      * @param testSet
      * @return A mapping of true or false to each entry in the test set.
      */
-    private Map<SocialMediaEntry, Boolean> classifyEntries(Set<SocialMediaEntry> trainingSet,
-            Set<SocialMediaEntry> testSet) {
-        
+    protected abstract Map<SocialMediaEntry, Boolean> classifyEntries(Set<SocialMediaEntry> trainingSet,
+            Set<SocialMediaEntry> testSet);
+/*    {
+
         System.out.println("Running classifier...");
         
         // In a real use case, build a machine learning model from the training set,
@@ -122,7 +123,7 @@ public class Experimenter {
         
         return results;
     }
-    
+*/  
     /**
      * Outputs the results of the experiment
      * @param results 
